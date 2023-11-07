@@ -1,8 +1,6 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
-from ckan.config.declaration import Declaration, Key
 from typing import Any, Callable
-
 
 def jupyterhub_endpoint():
     value = toolkit.config.get('ckanext.ndp.jupyterhub_endpoint')
@@ -10,7 +8,6 @@ def jupyterhub_endpoint():
 
 class NdpPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
-    plugins.implements(plugins.IConfigDeclaration)
     plugins.implements(plugins.ITemplateHelpers)
 
     # IConfigurer
@@ -22,8 +19,3 @@ class NdpPlugin(plugins.SingletonPlugin):
     # ITemplateHelpers
     def get_helpers(self) -> dict[str, Callable[..., Any]]:
         return {'ndp_jupyterhub_endpoint': jupyterhub_endpoint}
-
-    # IConfigDeclaration
-    def declare_config_options(self, declaration: Declaration, key: Key):
-        declaration.declare(
-            key.ckanext.ndp.jupyterhub_endpoint)
