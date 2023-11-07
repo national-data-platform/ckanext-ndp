@@ -1,6 +1,5 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
-from typing import Any, Callable
 
 def jupyterhub_endpoint():
     value = toolkit.config.get('ckanext.ndp.jupyterhub_endpoint')
@@ -17,5 +16,5 @@ class NdpPlugin(plugins.SingletonPlugin):
         toolkit.add_resource("assets", "ndp")
 
     # ITemplateHelpers
-    def get_helpers(self) -> dict[str, Callable[..., Any]]:
+    def get_helpers(self):
         return {'ndp_jupyterhub_endpoint': jupyterhub_endpoint}
