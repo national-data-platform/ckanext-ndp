@@ -59,14 +59,8 @@ To install ckanext-ndp:
 
 ## Config settings
 
-None at present
-
-**TODO:** Document any optional config settings here. For example:
-
-	# The minimum number of hours to wait before re-checking a resource
-	# (optional, default: 24).
-	ckanext.ndp.some_setting = some_default_value
-
+The following config settings can be modified in the `ckan.ini` file:
+- `ckanext.ndp.jupyterhub_endpoint`: URL for an instance of Jupyterhub, defaults to none
 
 ## Developer installation
 
