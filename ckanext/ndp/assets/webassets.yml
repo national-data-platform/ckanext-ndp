@@ -1,0 +1,14 @@
+# ndp-js:
+#   filter: rjsmin
+#   output: ckanext-ndp/%(version)s-ndp.js
+#   contents:
+#     - js/ndp.js
+#   extra:
+#     preload:
+#       - base/main
+
+# ndp-css:
+#   filter: cssrewrite
+#   output: ckanext-ndp/%(version)s-ndp.css
+#   contents:
+#     - css/ndp.css
